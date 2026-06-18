@@ -1,18 +1,21 @@
 import './App.css'
 
-import { useState, type ChangeEvent } from 'react'
+
+interface ButtonProps {
+  texto: string
+}
+
+function Button(props: ButtonProps) {
+  return <button>{props.texto}</button>
+}
 
 export default function App() {
-  const [search, setSearch] = useState('')
-
-  function onSearchInputChanged(e: ChangeEvent<HTMLInputElement>) {
-    setSearch(e.target.value)
-  }
 
   return (
     <div>
-      <input type="text" onChange={onSearchInputChanged} placeholder='Buscar...'/>
-      {search}
+      <Button texto='Clique aqui' />
+      <Button texto='Texto 2'/>
+      <Button texto='Texto de número 3' />
     </div>
   )
 } 
