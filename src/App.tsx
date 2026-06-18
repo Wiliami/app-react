@@ -1,16 +1,18 @@
 import './App.css'
-import { useCounter } from './hooks/useCounter'
-import { Users } from './pages/users'
+
+import { useState, type ChangeEvent } from 'react'
 
 export default function App() {
-  // const { count, increment } = useCounter();
+  const [search, setSearch] = useState('')
+
+  function onSearchInputChanged(e: ChangeEvent<HTMLInputElement>) {
+    setSearch(e.target.value)
+  }
 
   return (
-    // <>
-    //   <p>{count}</p>
-    //   <button onClick={increment}>Adicionar</button>
-    // </>
-
-    <Users />
+    <div>
+      <input type="text" onChange={onSearchInputChanged} placeholder='Buscar...'/>
+      {search}
+    </div>
   )
 } 

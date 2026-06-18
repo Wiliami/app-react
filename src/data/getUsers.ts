@@ -1,4 +1,4 @@
-import { membership } from '../permissions'
+import { membership } from '../lib/permissions'
 
 // Chamada banco de dados Fetch
 const user = {
